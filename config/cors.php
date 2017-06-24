@@ -13,7 +13,7 @@ return [
     'supportsCredentials' => false,
     'allowedOrigins' => ['http://localhost:8080'],
     'allowedHeaders' => ['Content-Type', 'Origin', 'X-Requested-with', 'Access-Control-Allow-Origin', 'Authorization'],
-    'allowedMethods' => ['GET','POST'],
+    'allowedMethods' => ['*'],
     'exposedHeaders' => [],
     'maxAge' => 0,
 ];

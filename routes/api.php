@@ -15,4 +15,10 @@ use Illuminate\Http\Request;
 
 Route::post('/login', 'AuthenticateController@authenticate');
 Route::post('/register', 'AuthenticateController@registration');
-Route::middleware('jwt.auth')->post('/user', 'UserController@index');
+//Route::middleware('jwt.auth')->post('/user', 'UserController@index');
+
+Route::group(['middleware' => 'jwt.auth'], function(){
+      Route::get('/user', 'UserController@index');
+      Route::post('/user', 'UserController@store');
+      Route::post('/user/{id}/delete', 'UserController@destroy');
+});
