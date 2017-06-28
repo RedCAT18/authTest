@@ -20,5 +20,5 @@ Route::post('/register', 'AuthenticateController@registration');
 Route::group(['middleware' => 'jwt.auth'], function(){
       Route::get('/user', 'UserController@index');
       Route::post('/user', 'UserController@store');
-      Route::post('/user/{id}/delete', 'UserController@destroy');
+      Route::post('/delete', 'UserController@destroy');
 });
